@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+   <body>
+      <table border = 1>
+         {% for asin, img_url in result.items() %}
+            <tr>
+               <th> {{ asin }} </th>
+               <td> {{ img_url }} </td>
+            </tr>
+         {% endfor %}
+      </table>
+   </body>
+</html>
