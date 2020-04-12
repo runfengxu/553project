@@ -2,6 +2,7 @@ from flask import Flask,request, render_template
 from werkzeug import secure_filename
 from extract_feature import extract
 from readpy import predict
+import sys
 #from readpy import
 app = Flask(__name__)
 
@@ -15,8 +16,10 @@ def display_result():
         f = request.files['file']
         f.save(secure_filename(f.filename))
         feature = extract(f.filename)
-        output = predict(feature)
-
+        # print(len(feature[0]), file=sys.stdout)
+        output = predict(feature[0])
+        
+       
         return str(output)
 #         result = predict(f.filename)
 #         recommendation = []

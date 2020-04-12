@@ -1,7 +1,8 @@
 import array
 import numpy as np
 from scipy.stats import pearsonr
-def predict(feature):
+import sys
+def predict(targetarray):
   path = '../dataset/image_features_Baby.b'#从数据库中提取多个图像feature的路径
   simarray = {}
   def readImageFeatures(path):
@@ -30,13 +31,16 @@ def predict(feature):
     simarray[i] = [sim, id]#相关系数和asin
     i=i+1
 
-  simarray1 = sorted(simarray.items(), key=lambda x: x[1], reverse = True)
+  simarray = sorted(simarray.values(), key=lambda x: x[1], reverse = True)
+  print(simarray, file=sys.stdout)
   #输出top n个最高相关系数的product id
-  n=5
+  
   id_array = []
-  while(i<n):
-    index, value = simarray1[i]
-    sim, id = value
-    id_array.append(id)
+  i=0
+  while(i<10):
+    value = simarray[i]
+    idx = value[1]
+    print(value, file=sys.stdout)
+    id_array.append(idx)
     i=i+1
   return id_array
