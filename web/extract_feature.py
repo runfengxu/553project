@@ -3,7 +3,7 @@ import torch
 from PIL import Image
 import os
 import numpy as np
-def extract(img_path,j):
+def extract(img_path):
 
 
     alexnet = models.alexnet(pretrained = True)

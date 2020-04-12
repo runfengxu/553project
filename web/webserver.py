@@ -1,6 +1,7 @@
 from flask import Flask,request, render_template
 from werkzeug import secure_filename
-#from Image_recognition import predict
+from extract_feature import extract
+#from readpy import
 app = Flask(__name__)
 
 @app.route('/')
@@ -12,8 +13,9 @@ def display_result():
     if request.method =='POST':
         f = request.files['file']
         f.save(secure_filename(f.filename))
-        print(f.filename)
-        return f.filename
+        feature = extract(f.filename)
+
+        return str(feature)
 #         result = predict(f.filename)
 #         recommendation = []
 #         result = {}
