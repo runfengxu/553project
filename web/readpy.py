@@ -21,26 +21,29 @@ def predict(targetarray):
     targetarray[i] = int(targetarray[i]*1000)
     i=i+1
   i=0
-  while(i<50):
-    id, newarray = next(asin)
+  # for i in range(10000):
+  #   idx, newarray = next(asin)
+  i=0
+  while(i<1000):
+    idx, newarray = next(asin)
     j=0
     while (j < len(newarray)):#float转int操作，前面你们处理过数据的话这里应该可以注释掉while
       newarray[j] = int(newarray[j] * 1000)
       j = j + 1
     sim = pearsonr(targetarray, newarray)[0]#算相关系数， pearson coefficient
-    simarray[i] = [sim, id]#相关系数和asin
+    simarray[i] = [sim, idx]#相关系数和asin
     i=i+1
 
   simarray = sorted(simarray.values(), key=lambda x: x[1], reverse = True)
-  print(simarray, file=sys.stdout)
+  #print(simarray, file=sys.stdout)
   #输出top n个最高相关系数的product id
   
   id_array = []
   i=0
-  while(i<10):
+  while(i<1000):
     value = simarray[i]
     idx = value[1]
-    print(value, file=sys.stdout)
+    #print(value, file=sys.stdout)
     id_array.append(idx)
     i=i+1
   return id_array
