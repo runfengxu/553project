@@ -26,21 +26,7 @@ import json
 
 
 
-def extract(img_path,j):
-    img = Image.open(img_path)
-    img = img.convert('RGB')
-    img_t = transform(img)
-    batch_t = torch.unsqueeze(img_t,0)
-    out = alexnet(batch_t)
-    out.squeeze()
-    out = out.tolist()
-    k={img_path.split('.')[0]:out}
-    with open('feature.json','a') as f:
-        f.write(str(k)+'\n')
-
-
-
-if __name__ == '__main__':
+def extract(img_path):
     alexnet = models.alexnet(pretrained = True)
 
     transform = transforms.Compose([transforms.Resize(256),transforms.CenterCrop(224),
@@ -48,10 +34,11 @@ if __name__ == '__main__':
     alexnet.eval()
     alexnet.classifier = alexnet.classifier[:-1]
 
-    img_paths  = os.listdir('img')
-    j=0
-    for img_path in img_paths:
-        extract('img/'+img_path,j)
-        j+=1
-        if j%1000==0:
-            print(j)
+    img = Image.open(img_path)
+    img = img.convert('RGB')
+    img_t = transform(img)
+    batch_t = torch.unsqueeze(img_t,0)
+    out = alexnet(batch_t)
+    out.squeeze()
+    out = out.tolist()
+    return out

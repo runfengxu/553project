@@ -26,7 +26,14 @@ import json
 
 
 
-def extract(img_path,j):
+def extract(img_path):
+    vgg = models.vgg16(pretrained = True)
+
+    transform = transforms.Compose([transforms.Resize(256),transforms.CenterCrop(224),
+            transforms.ToTensor(),transforms.Normalize(mean = [0.485,0.456,0.406],std = [0.229,0.224,0.225])])
+    vgg.eval()
+    vgg.classifier = vgg.classifier[:-1]
+    
     img = Image.open(img_path)
     img = img.convert('RGB')
     img_t = transform(img)
@@ -34,24 +41,17 @@ def extract(img_path,j):
     out = vgg(batch_t)
     out.squeeze()
     out = out.tolist()
-    k={img_path.split('.')[0]:out}
-    with open('E:/553/feature_vgg.json','a') as f:
-        f.write(str(k)+'\n')
+    return out
 
 
 
-if __name__ == '__main__':
-    vgg = models.vgg16(pretrained = True)
+# if __name__ == '__main__':
+    
 
-    transform = transforms.Compose([transforms.Resize(256),transforms.CenterCrop(224),
-            transforms.ToTensor(),transforms.Normalize(mean = [0.485,0.456,0.406],std = [0.229,0.224,0.225])])
-    vgg.eval()
-    vgg.classifier = vgg.classifier[:-1]
-
-    img_paths  = os.listdir('E:/553/img')
-    j=0
-    for img_path in img_paths:
-        extract('E:/553/img/'+img_path,j)
-        j+=1
-        if j%1000==0:
-            print(j)
+#     img_paths  = os.listdir('E:/553/img')
+#     j=0
+#     for img_path in img_paths:
+#         extract('E:/553/img/'+img_path,j)
+#         j+=1
+#         if j%1000==0:
+#             print(j)
