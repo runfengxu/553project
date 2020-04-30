@@ -1,7 +1,7 @@
 from flask import Flask,request,jsonify, render_template
 from werkzeug import secure_filename
 from extract_feature import extract
-from readpy import predict
+from recommend import predict
 import sys
 from flask_pymongo import PyMongo
 
@@ -30,7 +30,7 @@ def display_result():
         i=0
         while(i<len(products)):
             asin = products[i]
-            asin = str(asin)[2:-1]
+            asin = str(asin)
             print(asin)
             try:
                 cursor = metadata.find({"asin":asin})

@@ -11,7 +11,7 @@ def convert(output,input):
         f.write(l + '\n')
 
 
-convert("dataset/meta_data.json","dataset/meta_Baby.json.gz")
+convert("dataset/meta_cloth.json","dataset/meta_Clothing_Shoes_and_Jewelry.json.gz")
 
-convert("dataset/reviews.json","dataset/reviews_Baby.json.gz")
+convert("dataset/reviews_cloth.json","dataset/reviews_Clothing_Shoes_and_Jewelry.json.gz")
 
