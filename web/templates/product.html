@@ -1,36 +1,120 @@
-<html>
-    <body>
-        <div>
-            <!doctype html>
-            <html>
-               <body>
-                   <img src = {{url}} >
-                  <table border = 1>
-                     {% for key, value in meta.items() %}
-                        <tr>
-                           <th> {{ key }} </th>
-                           <td> {{ value }} </td>
-                        </tr>
-                     {% endfor %}
-                  </table>
-               </body>
-            </html>
-        </div>
-        <div>
-            <!doctype html>
-            <html>
-               <body>
-                  <table border = 1>
-                     {% for key, value in review.items() %}
-                        <tr>
-                           <th> {{ key }} </th>
-                           <td> {{ value }} </td>
-                        </tr>
-                     {% endfor %}
-                  </table>
-               </body>
-            </html>
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://localhost:5000/product/B002UHJD5O -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>product.html</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- <link rel="stylesheet" href="./product_files/main.css"> -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	</head>
+	<body class="">
+		<div class="page-wrap">
 
-        </div>
-    </body>
-</html>
+			<!-- Nav -->
+				
+
+			<!-- Main -->
+				<section id="main">
+
+					<!-- Header -->
+						<header id="header">
+							<div>Snapshot <span>by TEMPLATED</span></div>
+						</header>
+
+					<!-- Section -->
+						<section>
+							<div class="inner">
+								<img src = {{url}} >
+								<table border = 1>
+								   {% for key, value in meta.items() %}
+									  <tr>
+										 <th> {{ key }} </th>
+										 <td> {{ value }} </td>
+									  </tr>
+								   {% endfor %}
+								</table>
+							 </body>
+						  </html>
+					  </div>
+					  <div>
+						  <!doctype html>
+						  <html>
+							 <body>
+								<table border = 1>
+								   {% for key, value in review.items() %}
+									  <tr>
+										 <th> {{ key }} </th>
+										 <td> {{ value }} </td>
+									  </tr>
+								   {% endfor %}
+								</table>
+						</section>
+
+					<!-- Contact -->
+						<section id="contact">
+							<!-- Social -->
+								<div class="social column">
+									<h3>About Me</h3>
+									<p>Our group includes three young men: Wenhao Luo, Runfeng Xu, and Junzhe Shao. We are both graduate students in Computer Science here at Rutgers University. In this project, Runfeng Xu mainly worked on the computer vision model and Wenhao Luo developed this website and Junzhe Shao designed the recommending and ranking algorithm.</p>
+									<p>Although it is a global pandemic happening out there. We need to help and support each more than ever at this time. Staying at home, taking care of not only yourself and the people you cares. And we can defeat this virus. </p>
+									
+								<h3>Feedback
+									
+								</h3>
+									<ul class="icons">
+										<li><a href="file:///C:/Users/Runfe/Desktop/553/project/templated-snapshot/generic.html#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="file:///C:/Users/Runfe/Desktop/553/project/templated-snapshot/generic.html#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="file:///C:/Users/Runfe/Desktop/553/project/templated-snapshot/generic.html#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+									</ul>
+								</div>
+
+							<!-- Form -->
+								<div class="column">
+									<h3>Get in Touch</h3>
+									<form action="file:///C:/Users/Runfe/Desktop/553/project/templated-snapshot/generic.html#" method="post">
+										<div class="field half first">
+											<label for="name">Name</label>
+											<input name="name" id="name" type="text" placeholder="Name">
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input name="email" id="email" type="email" placeholder="Email">
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+										</div>
+										<ul class="actions">
+											<li><input value="Send Message" class="button" type="submit"></li>
+										</ul>
+									</form>
+								</div>
+
+						</section>
+
+					<!-- Footer -->
+						<footer id="footer">
+							<div class="copyright">
+								© Untitled Design: <a href="https://templated.co/">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>.
+							</div>
+						</footer>
+				</section>
+		</div>
+
+		<!-- Scripts -->
+		<script type="text/javascript"
+		src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+		<script type="text/javascript"
+		src="{{ url_for('static', filename='js/jquery.poptrox.min.js') }}"></script>
+		<script type="text/javascript"
+		src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+		<script type="text/javascript"
+		src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
+		<script type="text/javascript"
+		src="{{ url_for('static', filename='js/util.js') }}"></script>
+		<script type="text/javascript"
+		src="{{ url_for('static', filename='js/main.js') }}"></script>
+	
+
+	
+</body></html>

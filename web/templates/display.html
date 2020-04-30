@@ -1,30 +1,115 @@
-<!doctype html>
-<html>
-   <body >
-      <table border = 1 id="table">
-         {% for asin, img_url in result.items() %}
-            <tr>
-               <th> <a>{{ asin }}</a> </th>
-               <td> <img src={{ img_url }} href = "http://localhost:5000/product/"+{{asin}}> </td>
-            </tr>
-         {% endfor %}
+<!DOCTYPE html>
+<!-- saved from url=(0052)file:///E:/553/553project/web/templates/display.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>display.html</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- <link rel="stylesheet" href="./display_files/main.css"> -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	</head>
+	<body class="">
+		<div class="page-wrap">
 
-               
-<script type="text/javascript">
-   window.onload= function (){
-      var atag = document.getElementById("table").getElementsByTagName('a');
-      for(let i=0;i<atag.length;i++){
-         asin = atag[i].innerHTML;
-         // var as = {{ refer }}
-         // as = as[asin];
-         //alert(1);
-         console.log(asin);
-         url  = "http://localhost:5000/product/"+asin;
-         atag[i].setAttribute("href",url);
-   }
-   }
-   </script>
-      </table>
+			<!-- Nav -->
+				
 
-   </body>
-</html>
+			<!-- Main -->
+				<section id="main">
+
+					<!-- Header -->
+						
+
+					<!-- Gallery -->
+						<section id="galleries">
+
+							<!-- Photo Galleries -->
+								<div class="gallery">
+
+									<!-- Filters -->
+										<header>
+											<h1>Result</h1>
+											
+										</header>
+
+										<table border="1">
+											{% for asin, img_url in result.items() %}
+											<tr>
+											   <th> <a class='aa' href="http://localhost:5000/product/{{ asin }}">{{ asin }}</a> </th>
+											   <td><a href="http://localhost:5000/product/{{ asin }}">
+												  <img src={{ img_url }}></a>
+												</td>
+											</tr>
+										 {% endfor %}
+												</table>
+											
+    
+										<div class="content">
+											<div class="media all people">
+												<a href="file:///E:/553/553project/web/templates/display.html" style="outline: 0px;"><img src="./display_files/01.jpg" alt="" title=""></a>
+											</div>
+											<div class="media all place">
+												<a href="file:///E:/553/553project/web/templates/display.html" style="outline: 0px;"><img src="./display_files/05.jpg" alt="" title=""></a>
+											</div>
+											<div class="media all thing">
+												<a href="file:///E:/553/553project/web/templates/display.html" style="outline: 0px;"><img src="./display_files/09.jpg" alt="" title=""></a>
+											</div>
+											<div class="media all people">
+												<a href="file:///E:/553/553project/web/templates/display.html" style="outline: 0px;"><img src="./display_files/02.jpg" alt="" title=""></a>
+											</div>
+											<div class="media all place">
+												<a href="file:///E:/553/553project/web/templates/display.html" style="outline: 0px;"><img src="./display_files/06.jpg" alt="" title=""></a>
+											</div>
+											<div class="media all thing">
+												<a href="file:///E:/553/553project/web/templates/display.html" style="outline: 0px;"><img src="./display_files/10.jpg" alt="" title=""></a>
+											</div>
+											<div class="media all people">
+												<a href="file:///E:/553/553project/web/templates/display.html" style="outline: 0px;"><img src="./display_files/03.jpg" alt="" title=""></a>
+											</div>
+											<div class="media all place">
+												<a href="file:///E:/553/553project/web/templates/display.html" style="outline: 0px;"><img src="./display_files/07.jpg" alt="" title=""></a>
+											</div>
+											<div class="media all thing">
+												<a href="file:///E:/553/553project/web/templates/display.html" style="outline: 0px;"><img src="./display_files/11.jpg" alt="" title=""></a>
+											</div>
+											<div class="media all people">
+												<a href="file:///E:/553/553project/web/templates/display.html" style="outline: 0px;"><img src="./display_files/04.jpg" alt="" title=""></a>
+											</div>
+											<div class="media all place">
+												<a href="file:///E:/553/553project/web/templates/display.html" style="outline: 0px;"><img src="./display_files/08.jpg" alt="" title=""></a>
+											</div>
+											<div class="media all thing">
+												<a href="file:///E:/553/553project/web/templates/display.html" style="outline: 0px;"><img src="./display_files/12.jpg" alt="" title=""></a>
+											</div>
+										</div>
+								</div>
+						</section>
+
+					<!-- Contact -->
+						
+
+					<!-- Footer -->
+						<footer id="footer">
+							<div class="copyright">
+								© Untitled Design: <a href="https://templated.co/">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>.
+							</div>
+						</footer>
+				</section>
+		</div>
+
+		<!-- Scripts -->
+		<script type="text/javascript"
+		src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+		<script type="text/javascript"
+		src="{{ url_for('static', filename='js/jquery.poptrox.min.js') }}"></script>
+		<script type="text/javascript"
+		src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+		<script type="text/javascript"
+		src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
+		<script type="text/javascript"
+		src="{{ url_for('static', filename='js/util.js') }}"></script>
+		<script type="text/javascript"
+		src="{{ url_for('static', filename='js/main.js') }}"></script>
+	
+
+	
+<div class="poptrox-overlay" style="position: fixed; left: 0px; top: 0px; z-index: 1000; width: 100%; height: 100%; text-align: center; cursor: pointer; display: none;"><div style="display:inline-block;height:100%;vertical-align:middle;"></div><div style="position:absolute;left:0;top:0;width:100%;height:100%;background:#000000;opacity:0.6;filter:alpha(opacity=60);"></div><div class="poptrox-popup" style="background: rgb(255, 255, 255); color: rgb(0, 0, 0); padding: 10px 10px 60px; display: none; vertical-align: middle; position: relative; z-index: 1; min-width: 200px; min-height: 100px;"><div class="loader" style="position: relative; font-size: 2em; display: none;"></div><div class="pic" style="cursor: pointer; display: none;"></div><div class="caption" style="position: absolute; left: 0px; bottom: 0px; width: 100%; text-align: center; height: 60px; line-height: 60px; display: none;"></div><span class="closer" style="font-size: 20px; background: rgb(0, 0, 0); color: rgb(255, 255, 255); display: none; width: 40px; height: 40px; line-height: 40px; text-align: center; position: absolute; text-decoration: none; outline: 0px; top: 0px; right: -40px; cursor: pointer;">×</span></div></div><div class="poptrox-overlay" style="position: fixed; left: 0px; top: 0px; z-index: 1000; width: 100%; height: 100%; text-align: center; cursor: pointer; display: none;"><div style="display:inline-block;height:100%;vertical-align:middle;"></div><div style="position:absolute;left:0;top:0;width:100%;height:100%;background:#000000;opacity:0.6;filter:alpha(opacity=60);"></div><div class="poptrox-popup" style="background: rgb(255, 255, 255); color: rgb(0, 0, 0); padding: 10px 10px 60px; display: none; vertical-align: middle; position: relative; z-index: 1; min-width: 200px; min-height: 100px;"><div class="loader" style="position: relative; font-size: 2em; display: none;"></div><div class="pic" style="cursor: pointer; display: none;"></div><div class="caption" style="position: absolute; left: 0px; bottom: 0px; width: 100%; text-align: center; height: 60px; line-height: 60px; display: none;"></div><span class="closer" style="font-size: 20px; background: rgb(0, 0, 0); color: rgb(255, 255, 255); display: none; width: 40px; height: 40px; line-height: 40px; text-align: center; position: absolute; text-decoration: none; outline: 0px; top: 0px; right: -40px; cursor: pointer;">×</span></div></div></body></html>
